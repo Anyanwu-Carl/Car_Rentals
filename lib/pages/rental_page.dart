@@ -1,4 +1,5 @@
 import 'package:car_rental_app/components/product_price_info.dart';
+import 'package:car_rental_app/components/show_car_details.dart';
 import 'package:flutter/material.dart';
 
 class RentalPage extends StatefulWidget {
@@ -299,7 +300,14 @@ class _RentalPageState extends State<RentalPage> {
                           ),
 
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              showModalBottomSheet(
+                                backgroundColor: Colors.transparent,
+                                isScrollControlled: true,
+                                context: context,
+                                builder: (context) => ShowCarDetailsSheet(),
+                              );
+                            },
                             icon: Icon(
                               Icons.arrow_forward_sharp,
                               color: Colors.black,
